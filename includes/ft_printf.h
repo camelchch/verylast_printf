@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 14:54:36 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/21 23:45:23 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 02:12:15 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	set_print_d(t_data *data);
 void	put_zero_d(t_data *data);
 void	go_right_oux(t_data *data, char *pre_fix);
 void	put_zero_oux(t_data *data);
+void	ini_set(t_fu *set, t_mark *m);
 char	*ft_itoa_max(intmax_t n);
 char	*ft_itoa_unmax(uintmax_t n);
 char	*ft_itoa_short(short n);
@@ -88,7 +89,7 @@ char	*itoa_hex(uintmax_t nb, char x);
 int		max_2(int x, int y);
 int		max_3(int x, int y, int z);
 int		nb_digit(char *str);
-int		is_format(char c);
+int		is_f(char c);
 uintmax_t	nb_dg_inbase(uintmax_t n, unsigned int base_to);
 void	ft_putnstr(char *s, int nbr);
 void	ft_putnwstr(wchar_t *s, int nbr);
@@ -100,24 +101,5 @@ void	ft_putnwchar(wchar_t *we, int nbr);
 size_t	ft_wstrlen(wchar_t *we);
 void	set_cast(t_data *data, char *format, int size);
 int		ft_printf(const char *restrict format, ...);
-
-t_fu	set[NB_CON] =
-{
-	{'s',con_s},
-	{'S',con_bigs},
-	{'o',con_o},
-	{'O',con_bigo},
-	{'d',con_d},
-	{'D',con_bigd},
-	{'i',con_d},
-	{'c',con_c},
-	{'C',con_bigc},
-	{'u',con_u},
-	{'%',con_per},
-	{'p',con_p},
-	{'U',con_bigu},
-	{'x',con_x},
-	{'X',con_bigx}
-};
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 14:11:07 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 00:08:35 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 02:48:40 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,18 @@ int				ft_printf(const char *restrict format, ...)
 	va_list		args;
 	t_mark		m;
 	t_data		data;
+	t_fu		set[NB_CON];
 
 	va_start(args, format);
-	m.nbr = 0;
-	data.len = 0;
+	ini_set(set, &m);
 	while (*format)
 	{
 		ini_m(&m, &data);
 		if (*format == '%')
 		{
-			while (format + m.i && format[m.i] && !is_format(format[m.i])\
-					&& !m.per)
+			while (format + m.i && format[m.i] && !is_f(format[m.i]) && !m.per)
 				move_i((char *)format, &m);
-			while (format && m.j < NB_CON && set[m.j].c != format[m.i])
+			while (format + m.i && m.j < NB_CON && set[m.j].c != format[m.i])
 				(m.j)++;
 			if (format && m.j < NB_CON)
 				(set[m.j].func)(args, &data, (char *)format, m.i);

@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 19:37:17 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/21 19:45:43 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 02:43:51 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,9 @@ char		*ft_itoa_unmax(uintmax_t n)
 	return (number);
 }
 
-char		*itoa_base(uintmax_t nb, int from, int to)
+static void	set_base(char *base_from, char *base_to, int from, int to)
 {
 	int		i;
-	char	*ori;
-	char	base_from[from + 1];
-	char	base_to[from + 1];
 	char	a;
 
 	i = 0;
@@ -53,8 +50,20 @@ char		*itoa_base(uintmax_t nb, int from, int to)
 	while (i < to)
 		base_to[i++] = a++;
 	base_to[i] = '\0';
+}
+
+char		*itoa_base(uintmax_t nb, int from, int to)
+{
+	char	*ori;
+	char	base_from[from + 1];
+	char	base_to[from + 1];
+	char	*result;
+
+	set_base(base_from, base_to, from, to);
 	ori = ft_itoa_unmax(nb);
-	return (ft_convert_base(ori, base_from, base_to));
+	result = ft_convert_base(ori, base_from, base_to);
+	free(ori);
+	return (result);
 }
 
 char		*itoa_hex(uintmax_t nb, char x)

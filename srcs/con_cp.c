@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 19:19:38 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/21 23:45:42 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 02:51:36 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void			con_bigc(va_list args, t_data *data, char *format, int size)
 {
 	set_cast(data, format, size);
 	set_flags(data, format, size);
+	data->cast = l;
 	set_print_c(args, data);
 }
 
@@ -81,6 +82,7 @@ void			con_p(va_list args, t_data *data, char *format, int size)
 			ft_putstr("0x0");
 		}
 	}
+	free(data->ori);
 }
 
 void			con_per(va_list args, t_data *data, char *format, int size)

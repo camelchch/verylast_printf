@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 13:49:22 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/21 21:32:54 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 03:01:29 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,11 @@ void			con_s(va_list args, t_data *data, char *format, int size)
 	{
 		data->ori = va_arg(args, char *);
 		if (!data->ori)
+		{
 			data->ori = ft_strdup("(null)");
+			set_print_s(data);
+			free(data->ori);
+		}
 		set_print_s(data);
 	}
 }

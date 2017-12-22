@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 13:50:53 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/21 19:18:10 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 02:51:57 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void			con_d(va_list args, t_data *data, char *format, int size)
 	cast_nu_d(args, data, format, size);
 	set_flags(data, format, size);
 	set_print_d(data);
+	free(data->ori);
 }
 
 void			con_bigd(va_list args, t_data *data, char *format, int size)
@@ -81,4 +82,5 @@ void			con_bigd(va_list args, t_data *data, char *format, int size)
 	data->ori = ft_itoa_max(va_arg(args, long int));
 	set_flags(data, format, size);
 	set_print_d(data);
+	free(data->ori);
 }

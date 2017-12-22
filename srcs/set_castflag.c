@@ -6,14 +6,14 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 22:12:26 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/21 22:36:05 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 02:47:00 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes/ft_printf.h"
 
-int				is_format(char c)
+int				is_f(char c)
 {
 	return (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' ||\
 			c == 'i' || c == 'o' || c == 'O' || c == 'u' || c == 'U' ||\

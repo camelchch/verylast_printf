@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 19:37:17 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 02:43:51 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 06:16:37 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char		*itoa_hex(uintmax_t nb, char x)
 	char	*result;
 	char	*ori;
 
+	result = NULL;
 	ori = ft_itoa_unmax(nb);
 	if (x == 'x')
 		result = ft_convert_base(ori, "0123456789", "0123456789abcdef");

@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 14:11:07 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 03:08:24 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 06:14:47 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int				ft_printf(const char *restrict format, ...)
 
 	va_start(args, format);
 	ini_set(set, &m);
-	while (*format)
+	while (format && *format)
 	{
 		ini_m(&m, &data);
 		if (*format == '%')

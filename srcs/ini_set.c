@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 14:11:07 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 03:26:49 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 06:24:23 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void			ini_set(t_fu *set, t_mark *m)
 	m->nbr = 0;
 }
 
-void		add_hash_p(t_data *data)
+void			add_hash_p(t_data *data)
 {
 	int		i;
 

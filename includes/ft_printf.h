@@ -6,17 +6,19 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 14:54:36 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 02:12:15 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 03:50:26 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
 
-#include <stdint.h>
-#include <stdarg.h>
-#include <wchar.h>
-#include <string.h>
+# define FT_PRINTF_H
+
+# include <stdint.h>
+# include <stdarg.h>
+# include <wchar.h>
+# include <string.h>
+# define NB_CON	15
 
 typedef enum	s_cast
 {
@@ -41,7 +43,6 @@ typedef	struct	s_data
 	t_cast	cast;
 }			t_data;
 
-#define NB_CON	15
 typedef	struct	s_mark
 {
 	int		i;
@@ -94,6 +95,7 @@ uintmax_t	nb_dg_inbase(uintmax_t n, unsigned int base_to);
 void	ft_putnstr(char *s, int nbr);
 void	ft_putnwstr(wchar_t *s, int nbr);
 void	ft_putnchar(char c, int nbr);
+void	add_hash_p(t_data *data);
 char	*ft_strnchr(const char *s, int c, int size);
 int		ft_strnchr_double(const char *s, int c, int size);
 void	ft_putwchar(wchar_t we);

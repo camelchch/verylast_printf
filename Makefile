@@ -6,7 +6,7 @@
 #    By: saxiao <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/15 14:39:08 by saxiao            #+#    #+#              #
-#    Updated: 2017/12/22 01:58:55 by saxiao           ###   ########.fr        #
+#    Updated: 2017/12/22 03:37:38 by saxiao           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ FT_OBJS = $(SRC_NAME:.c=.o)
 OBJS = $(LIB_OBJS) $(FT_OBJS)
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 LIB_SRC = $(addprefix $(LIB_PATH), $(LIB_SCRNAME))
-INCLUDE = -Iincludes
+INCLUDE = -I includes
 
 all: $(NAME)
 

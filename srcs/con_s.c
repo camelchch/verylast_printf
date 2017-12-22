@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 13:49:22 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 03:01:29 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 03:09:38 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,8 @@ void			con_s(va_list args, t_data *data, char *format, int size)
 			set_print_s(data);
 			free(data->ori);
 		}
-		set_print_s(data);
+		else
+			set_print_s(data);
 	}
 }
 

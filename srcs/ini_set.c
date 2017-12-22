@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 14:11:07 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 02:07:48 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 03:26:49 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,14 @@ void			ini_set(t_fu *set, t_mark *m)
 	set[6].func = con_d;
 	for_iniset(set);
 	m->nbr = 0;
+}
+
+void		add_hash_p(t_data *data)
+{
+	int		i;
+
+	i = 0;
+	while ((data->flags)[i])
+		i++;
+	(data->flags)[i] = '#';
 }

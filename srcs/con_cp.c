@@ -6,7 +6,7 @@
 /*   By: saxiao <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 19:19:38 by saxiao            #+#    #+#             */
-/*   Updated: 2017/12/22 02:51:36 by saxiao           ###   ########.fr       */
+/*   Updated: 2017/12/22 03:36:42 by saxiao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,10 @@ void			con_bigc(va_list args, t_data *data, char *format, int size)
 
 void			con_p(va_list args, t_data *data, char *format, int size)
 {
-	int		i;
-
-	i = 0;
 	set_cast(data, format, size);
 	data->ori = itoa_hex(va_arg(args, unsigned long), 'x');
 	set_flags(data, format, size);
-	while (data->flags[i])
-		i++;
-	data->flags[i] = '#';
+	add_hash_p(data);
 	if (data->ori[0] != '0')
 		set_print_oxu_hash(data, "0x");
 	else
